@@ -28,7 +28,7 @@ function App() {
   function toggleEmployment (event){    
     setdeveloper((prevState)=> ({
       ...prevState,
-      yearsExperience: event.target.value
+      isEmployed: !prevState.isEmployed
     }))
   }
 
@@ -41,6 +41,7 @@ function App() {
       </div>      
       <p>I am learnig {developer.language}</p>
       <p>I have {developer.yearsExperience} years of experience</p>
+      <p>I am {developer.isEmployed ? "Employed" : "UnEmployed"}</p>
     </div>
   );
 }
