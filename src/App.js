@@ -23,6 +23,8 @@ export default function App() {
 
 
 
+// first deep with useEffect and useState
+
 // function App() {
 //   // const [language, setlanguage] = React.useState('Python');
 //   // const [yearsExperience, setyearsExperience] = React.useState(0);
