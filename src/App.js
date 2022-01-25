@@ -11,6 +11,10 @@ function App() {
     isEmployed: false
   });
 
+  React.useEffect(() => {
+    document.title = "Chidiebere"
+  })
+
   function handleChangeLanguage (){    
     setdeveloper({
       language: "JavaScript",
