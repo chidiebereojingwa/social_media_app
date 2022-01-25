@@ -1,25 +1,37 @@
 
 import React from 'react';
 
+
+
+
 export default function App() {
-  const [mousePosition, setMousePosition] = React.useState({x:0, y:0});
-
-  React.useEffect(() => {
-    
-      document.addEventListener('mousemove', handleMouseMove)
-    }, []) 
-
-  function handleMouseMove(event) {
-    setMousePosition({ x: event.pageX, y: event.pageY})
-  }
-
-  return (
-  <div>
-      <p> X: {mousePosition.x}</p>
-      <p> Y: {mousePosition.y}</p>
-  </div>
-  )
+  return <div></div>;
 }
+
+
+
+
+//Using useEffect to track mouse movement
+
+// export default function App() {
+//   const [mousePosition, setMousePosition] = React.useState({x:0, y:0});
+
+//   React.useEffect(() => {
+    
+//       document.addEventListener('mousemove', handleMouseMove)
+//     }, []) 
+
+//   function handleMouseMove(event) {
+//     setMousePosition({ x: event.pageX, y: event.pageY})
+//   }
+
+//   return (
+//   <div>
+//       <p> X: {mousePosition.x}</p>
+//       <p> Y: {mousePosition.y}</p>
+//   </div>
+//   )
+// }
 
 
 
