@@ -2,15 +2,26 @@ import React from "react"
 import { ReactDOM } from "react";
 
 function App() {
-  const [language, setlanguage] = React.useState('Python');
-  const [yearsExperience, setyearsExperience] = React.useState(0);
+  // const [language, setlanguage] = React.useState('Python');
+  // const [yearsExperience, setyearsExperience] = React.useState(0);
+
+  const [developer, setdeveloper] = React.useState({
+    language: "Python",
+    yearsExperience: 0
+  });
 
   function handleChangeLanguage (){    
-    setlanguage("Javascript")
+    setdeveloper({
+      language: "JavaScript",
+      yearsExperience: 0
+    })
   }
 
   function handleChangeExperience (event){    
-    setyearsExperience(event.target.value)
+    setdeveloper({
+      ...developer,
+      yearsExperience: event.target.value
+    })
   }
 
   return (
@@ -20,8 +31,8 @@ function App() {
       <div>
       <input type="number" onChange={handleChangeExperience} placeholder="type years of experience"/>
       </div>      
-      <p>I am learnig {language}</p>
-      <p>{yearsExperience}</p>
+      <p>I am learnig {developer.language}</p>
+      <p>I have {developer.yearsExperience} years of experience</p>
     </div>
   );
 }
