@@ -1,14 +1,46 @@
 
 import React from 'react';
+ 
 
 
-
-const endpoint = "https://github.com/chidiebereojingwa/"
+// const endpoint = "https://github.com/users/codeartistryio"
+const endpoint = "https://api.coindesk.com/v1/bpi/currentprice.json"
 
 export default function App() {
-  return <div>
+ const [coin, setCoin] = React.useState(null);
+  // React.useEffect(() => {
+  //   fetch(endpoint)
+  //     .then(res => res.json())
+  //     .then(data => setCoin(data))
+  // }, [])
 
-  </div>;
+  // React.useEffect(async () => {
+  //   const res = await fetch(endpoint)
+  //    const data = await res.json();
+  //    setCoin(data)
+  // }, [])
+
+  React.useEffect(() => {
+    async function getCoin(){
+      const res = await fetch(endpoint)
+       const data = await res.json();
+       setCoin(data)
+    }
+    getCoin();
+  }, [])
+
+  
+
+  console.log(coin)
+
+  return coin ? (
+   <div>
+      <p>{coin.disclaimer}</p>
+      {/* <p>{coin.bpi[0]}</p> 
+      <p>{coin.bpi[0].rate}</p> */}
+    </div>
+      ) : <h1>Loading ....</h1>
+    
 }
 
 
