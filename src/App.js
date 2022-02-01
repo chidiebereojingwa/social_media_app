@@ -9,8 +9,6 @@ export default function App() {
 }
 
 
-
-
 // first lesson
 
 // // const endpoint = "https://github.com/users/codeartistryio"
