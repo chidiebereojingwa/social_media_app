@@ -1,10 +1,16 @@
-
 import React from 'react';
+import Login from './components/Login';
 
 
 
 
 export default function App() {
+    let user = ""
+
+    if(!user){
+        return <Login/>
+    }
+
   return <div>Hello</div>;
 }
 
