@@ -1,11 +1,15 @@
 import React from "react";
+import CreatePost from "./components/CreatePost";
 import Header from "./components/Header";
 import Login from "./components/Login";
 
 function App() {
   const [user, setUser] = React.useState("orji");
-
   console.log(user);
+
+  React.useEffect(()=>{
+    document.title = user ? `${user}'s Feed` : "Please Login";
+  },[user])
 
   if (!user) {
     return <Login setUser={setUser} />;
@@ -14,6 +18,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser}/>
+      <CreatePost/>
     </>
   );
 }
