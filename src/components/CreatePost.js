@@ -1,11 +1,13 @@
 import React from 'react';
 
-function CreatePost({user}) {
+function CreatePost({user, setPosts, posts}) {
     const [content, setContent] = React.useState("")
     const [image, setImage] = React.useState(null)
 
     const handleSubmit = () => {
         const post = {content,image, user}
+        const newPost = [post, ...posts]
+        setPosts(newPost)
     }
   return (
   <div>
