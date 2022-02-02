@@ -5,6 +5,7 @@ import Login from "./components/Login";
 
 function App() {
   const [user, setUser] = React.useState("orji");
+  const [posts, setPosts] = React.useState([]);
   console.log(user);
 
   React.useEffect(()=>{
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
       <Header user={user} setUser={setUser}/>
-      <CreatePost/>
+      <CreatePost user={user} setPosts={setPosts}/>
     </>
   );
 }
