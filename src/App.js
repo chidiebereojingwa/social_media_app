@@ -1,23 +1,24 @@
-import React from 'react';
-import Login from './components/Login';
-
+import React from "react";
+import Header from "./components/Header";
+import Login from "./components/Login";
 
 function App() {
-    const [user, setUser] = React.useState("");
+  const [user, setUser] = React.useState("orji");
 
-    console.log(user)
+  console.log(user);
 
-    
-    if (!user){
-        return <Login setUser={setUser}/>
-    }
+  if (!user) {
+    return <Login setUser={setUser} />;
+  }
 
-
-  return <div>App</div>;
+  return (
+    <>
+      <Header user={user} setUser={setUser}/>
+    </>
+  );
 }
 
-export default App
-
+export default App;
 
 // first lesson
 
@@ -47,22 +48,17 @@ export default App
 //     getCoin();
 //   }, [])
 
-  
-
 //   console.log(coin)
 
 //   return coin ? (
 //    <div>
 //       <p>{coin.disclaimer}</p>
-//       {/* <p>{coin.bpi[0]}</p> 
+//       {/* <p>{coin.bpi[0]}</p>
 //       <p>{coin.bpi[0].rate}</p> */}
 //     </div>
 //       ) : <h1>Loading ....</h1>
-    
+
 // }
-
-
-
 
 // //Using useEffect to track mouse movement
 
@@ -70,9 +66,9 @@ export default App
 // //   const [mousePosition, setMousePosition] = React.useState({x:0, y:0});
 
 // //   React.useEffect(() => {
-    
+
 // //       document.addEventListener('mousemove', handleMouseMove)
-// //     }, []) 
+// //     }, [])
 
 // //   function handleMouseMove(event) {
 // //     setMousePosition({ x: event.pageX, y: event.pageY})
@@ -85,8 +81,6 @@ export default App
 // //   </div>
 // //   )
 // // }
-
-
 
 // // first deep with useEffect and useState
 
@@ -104,21 +98,21 @@ export default App
 // //     document.title = "Chidiebere"
 // //   })
 
-// //   function handleChangeLanguage (){    
+// //   function handleChangeLanguage (){
 // //     setdeveloper({
 // //       language: "JavaScript",
 // //       yearsExperience: 0
 // //     })
 // //   }
 
-// //   function handleChangeExperience (event){    
+// //   function handleChangeExperience (event){
 // //     setdeveloper({
 // //       ...developer,
 // //       yearsExperience: event.target.value
 // //     })
 // //   }
 
-// //   function toggleEmployment (event){    
+// //   function toggleEmployment (event){
 // //     setdeveloper((prevState)=> ({
 // //       ...prevState,
 // //       isEmployed: !prevState.isEmployed
@@ -131,7 +125,7 @@ export default App
 // //       <button onClick={handleChangeLanguage}>Change language</button>
 // //       <div>
 // //       <input type="number" onChange={handleChangeExperience} placeholder="type years of experience"/>
-// //       </div>      
+// //       </div>
 // //       <p>I am learnig {developer.language}</p>
 // //       <p>I have {developer.yearsExperience} years of experience</p>
 // //       <p>I am {developer.isEmployed ? "Employed" : "UnEmployed"}</p>
