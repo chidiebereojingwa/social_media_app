@@ -8,9 +8,9 @@ function App() {
   const [posts, setPosts] = React.useState([]);
   console.log(user);
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     document.title = user ? `${user}'s Feed` : "Please Login";
-  },[user])
+  }, [user]);
 
   if (!user) {
     return <Login setUser={setUser} />;
@@ -18,20 +18,24 @@ function App() {
 
   return (
     <>
-      <Header user={user} setUser={setUser}/>
-      <CreatePost user={user} setPosts={setPosts} posts={posts}/>
-      {posts.map(post=>{
+      <Header user={user} setUser={setUser} />
+      <CreatePost user={user} setPosts={setPosts} posts={posts} />
+      {posts.map((post) => {
         <>
-            {post.image && (
+          {post.image && (
+            <>
               <img
-              style={{ height: 100, width:200, objectFit: 'cover'}}
-              src={URL.createObjectURL(post.image)}
-              alt="Post cover image"
+                style={{ height: 100, width: 200, objectFit: "cover" }}
+                src={URL.createObjectURL(post.image)}
+                alt="Post cover image"
               />
-            )}
-        </>
+              <p>{post.content}</p>
+              <div>{user}</div>
+            </>
+          )}
+        </>;
       })}
-      </>
+    </>
   );
 }
 
