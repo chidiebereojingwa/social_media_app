@@ -23,16 +23,17 @@ function App() {
       {posts.map((post) => {
         <>
           {post.image && (
-            <>
+            
               <img
                 style={{ height: 100, width: 200, objectFit: "cover" }}
                 src={URL.createObjectURL(post.image)}
                 alt="Post cover image"
-              />
-              <p>{post.content}</p>
-              <div>{user}</div>
-            </>
+              />            
+            
           )}
+          
+           <p>{post.content}</p>
+              <div>{user}</div>
         </>;
       })}
     </>
