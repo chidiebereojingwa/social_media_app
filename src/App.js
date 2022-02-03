@@ -20,7 +20,10 @@ function App() {
     <>
       <Header user={user} setUser={setUser}/>
       <CreatePost user={user} setPosts={setPosts} posts={posts}/>
-    </>
+      {posts.map(post=>{
+
+      })}
+      </>
   );
 }
 
