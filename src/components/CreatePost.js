@@ -4,7 +4,8 @@ function CreatePost({user, setPosts, posts}) {
     const [content, setContent] = React.useState("")
     const [image, setImage] = React.useState(null)
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         const post = {content,image, user}
         const newPost = [post, ...posts]
         setPosts(newPost)
@@ -24,13 +25,13 @@ function CreatePost({user, setPosts, posts}) {
           />
           <button type='submit'>Submit Post</button>
       </form>
-      <p>{content}</p>
+      {/* <p>{content}</p>
       {image && <img
       style={{ height:200, width: 200, objectFit: "cover"}}
       src={URL.createObjectURL(image)}
       alt='post img'
       />}
-      <p>Posted by : {user}</p>
+      <p>Posted by : {user}</p> */}
   </div>
   );
 }

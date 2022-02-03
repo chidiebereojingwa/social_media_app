@@ -20,7 +20,7 @@ function App() {
     <>
       <Header user={user} setUser={setUser} />
       <CreatePost user={user} setPosts={setPosts} posts={posts} />
-      {posts.map((post) => {
+      {posts.map((post) => (
         <>
           {post.image && (
             
@@ -31,11 +31,11 @@ function App() {
               />            
             
           )}
-          
+
            <p>{post.content}</p>
-              <div>{user}</div>
-        </>;
-      })}
+              <div>Posted by: {user}</div>
+        </>
+      ))}
     </>
   );
 }
