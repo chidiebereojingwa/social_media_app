@@ -5,7 +5,7 @@ This project was was built using
 - Javascript
 - CSS
 
-## Available Scripts
+## USAGE
 
 In the project directory, you can run:
 
