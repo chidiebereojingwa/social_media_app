@@ -10,7 +10,7 @@ router.post("/register", (req, res) => {
     "INSERT INTO Users(username, password) VALUES (?, ?);",
     [username, password],
     (err, results) => {
-      consol.log(err);
+      console.log(err);
       res.send(results);
     }
   );
