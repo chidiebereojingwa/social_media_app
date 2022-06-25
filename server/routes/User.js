@@ -23,7 +23,7 @@ router.post("/login", (req, res) => {
 
   db.query(
     "SELECT * FROM Users WHERE username = ?",
-    username,
+    [username,password],
     (err, results) => {
       if (err) {
         console.log(err);
