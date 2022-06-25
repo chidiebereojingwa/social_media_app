@@ -29,6 +29,7 @@ router.post("/login", (req, res) => {
         console.log(err);
       }
       if (results.length > 0) {
+        console.log(results[0])
         if (password == results[0].password) {
           res.json({ loggedIn: true, username: username });
         } else {
